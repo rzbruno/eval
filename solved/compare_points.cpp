@@ -10,28 +10,31 @@ int main(int argc, char *argv[])
    std::string temp="", line="", location="";
    long current_X=0, current_Y=0, target_X=0, target_Y=0;
 
+   /*Loading file stream into vector*/
    while (getline(stream, line)) {
       std::stringstream os(line);
       while (os >> temp)
          v.push_back(stoi(temp));
 
+      /*Loading points - Cartesian plane*/
       current_X = v[0];
       current_Y = v[1];
       target_X  = v[2];
       target_Y  = v[3];
 
+      /*Checking coordinates*/
       if (target_X == current_X && target_Y == current_Y)
          location += "here";
       else{
          if (target_Y > current_Y)
-         location += "N";
+            location += "N";
          else if (target_Y < current_Y)
-         location += "S";
+            location += "S";
 
          if (target_X > current_X)
-         location += "E";
+            location += "E";
          else if (target_X < current_X)
-         location += "W";
+            location += "W";
       }
       std::cout << location << std::endl;
 
