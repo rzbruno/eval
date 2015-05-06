@@ -15,7 +15,8 @@ def prefix(expression):
          del expression[0]
          first = prefix(expression)
          second = prefix(expression)
-         return calc(token, first, second)
+         return int(calc(token, first, second))
+      else: return 0
 
 test_cases = open(sys.argv[1], 'r')
 for test in test_cases:
