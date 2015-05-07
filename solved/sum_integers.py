@@ -1,10 +1,10 @@
 import sys
 
-l = []
+sumx = 0
 
 test_cases = open(sys.argv[1], 'r')
 for test in test_cases:
-   l.append(int(test))
+   sumx += int(test)
 test_cases.close()
 
-print(sum(l))
+print(sumx)
